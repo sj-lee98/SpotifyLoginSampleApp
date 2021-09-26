@@ -217,12 +217,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faC-g4-FUE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085" y="-6"/>
+            <point key="canvasLocation" x="1083" y="7"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="AJ3-Ak-qpj">
             <objects>
-                <viewController id="jPh-aq-9u0" customClass="MainViewController" customModule="SpotifyLoginSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="jPh-aq-9u0" customClass="MainViewController" customModule="SpotifyLoginSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3dI-Wb-pma">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,6 +253,7 @@
                             <constraint firstItem="Rin-rG-jWe" firstAttribute="top" secondItem="NZN-Wo-xjy" secondAttribute="bottom" constant="20" id="erh-Pf-twD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="F64-jc-SHP"/>
                     <connections>
                         <outlet property="welcomeLabel" destination="NZN-Wo-xjy" id="zPs-Ry-xSQ"/>
                     </connections>
