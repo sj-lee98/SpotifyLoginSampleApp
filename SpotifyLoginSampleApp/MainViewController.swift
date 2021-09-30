@@ -11,6 +11,7 @@ import FirebaseAuth
 class MainViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var resetPasswordButton: UIButton!
+    @IBOutlet weak var profileUpdateButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -50,12 +51,23 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBAction func profileUpdateButtonTapped(_ sender: UIButton) {
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = "토끼"
+        changeRequest?.commitChanges { _ in
+            let displayName = Auth.auth().currentUser?.displayName ?? Auth.auth().currentUser?.email ?? "고객"
+            
+            self.welcomeLabel.text = """
+                환영합니다.
+                \(displayName)님
+                """
+        }
+    }
+    
+    
     @IBAction func resetPasswordButtonTapped(_ sender: UIButton) {
         // 현재 사용자의 이메일로 사용자가 비밀번호를 리셋할 수 있는 이메일 보내게 된다.
         let email = Auth.auth().currentUser?.email ?? ""
         Auth.auth().sendPasswordReset(withEmail: email, completion: nil)
     }
-    
-    
-    
 }
